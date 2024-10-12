@@ -19,6 +19,12 @@ export const InputTextArrow: FC<Props> = ({ placeholder, press }) => {
     setInput("");
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
   return (
     <>
       <div className="relative">
@@ -26,8 +32,9 @@ export const InputTextArrow: FC<Props> = ({ placeholder, press }) => {
           type="text"
           placeholder={placeholder}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
           value={input}
-          className="h-[48px] w-full border border-[#DEE2E6] pl-6 pr-12 rounded-lg placeholder:text-[#54595E] placeholder:font-semibold"
+          className="h-[48px] w-full border border-[#DEE2E6] pl-6 pr-12 rounded-lg placeholder:text-[#54595E] placeholder:font-semibold focus:outline-none focus:border-gray-400"
         />
 
         <span className="cursor-pointer absolute right-4 top-0 transform translate-y-1/2" onClick={handleClick}>

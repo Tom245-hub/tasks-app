@@ -14,13 +14,13 @@ export const Checkbox: FC<Props> = ({ label, tmpUid, checked, setChecked }) => {
   const activeLabel = checked ? "text-[#17A2B8]" : "text-[#6C757D]";
   const activeCheckboxBg = checked ? "bg-[#17A2B8] border-0" : "";
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(tmpUid, e.target.checked);
+  const handleChange = () => {
+    setChecked(tmpUid, !checked);
   };
 
   return (
     <>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 ">
         <div className="flex items-center relative">
           <input
             type="checkbox"

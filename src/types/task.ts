@@ -15,4 +15,5 @@ export interface ITasksContext {
   setTasksFilter: (data: TasksFilter) => void;
   addNewTask: (title: string) => void;
   setCompletedTask: (tmpUid: string, completed: boolean) => void;
+  deleteTask: (tmpUid: string) => void;
 }

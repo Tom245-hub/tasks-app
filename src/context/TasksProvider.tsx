@@ -19,6 +19,11 @@ export const TasksProvider: FC<Props> = ({ children }) => {
     setTasksLists(listWithNewTask);
   };
 
+  const deleteTask = (tmpUid: string) => {
+    const listWithoutTask = tasksList.filter((task) => task.tmpUid !== tmpUid);
+    setTasksLists(listWithoutTask);
+  };
+
   const setCompletedTask = (tmpUid: string, completed: boolean) => {
     const updatedTasks = tasksList.map((task) => (task.tmpUid === tmpUid ? { ...task, completed } : task));
     setTasksLists(updatedTasks);
@@ -32,6 +37,7 @@ export const TasksProvider: FC<Props> = ({ children }) => {
         setTasksFilter,
         addNewTask,
         setCompletedTask,
+        deleteTask,
       }}
     >
       {children}

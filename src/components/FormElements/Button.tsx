@@ -7,7 +7,9 @@ interface Props {
 }
 
 export const Button: FC<Props> = ({ active, title, onClick }) => {
-  const activeStyles = active ? "bg-[#17A2B8] text-white font-semibold" : "border border-[#DEE2E6] text-[#54595E] font-medium";
+  const activeStyles = active
+    ? "bg-[#17A2B8] text-white font-semibold"
+    : "border border-[#DEE2E6] text-[#54595E] font-medium hover:bg-gray-100 hover:border-gray-400 transition-colors duration-300";
 
   return (
     <>
