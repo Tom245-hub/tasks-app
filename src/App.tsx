@@ -1,19 +1,22 @@
 import { FC } from "react";
 
-import { TasksList } from "./components/TasksList";
-import { TaskInput } from "./components/TaskInput";
-import { TasksFilters } from "./components/TasksFilters";
+import { TasksList } from "./components/Templates/TasksList";
+import { TaskInput } from "./components/Templates/TaskInput";
+import { TasksFilters } from "./components/Templates/TasksFilters";
+
+import { TasksProvider } from "./context/TasksProvider";
+import { Container } from "./components/UI/Container";
 
 export const App: FC = () => {
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
-        <div className="flex flex-col w-[285px] gap-4">
+      <TasksProvider>
+        <Container>
           <TaskInput />
           <TasksFilters />
           <TasksList />
-        </div>
-      </div>
+        </Container>
+      </TasksProvider>
     </>
   );
 };
