@@ -1,19 +1,22 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 
 import { CheckSVG } from "../Icons/CheckSVG";
 
 interface Props {
   label: string;
-  tmpUid?: string;
+  tmpUid: string;
+  setChecked: (tmpUid: string, checked: boolean) => void;
+  checked: boolean;
 }
 
-export const Checkbox: FC<Props> = ({ label, tmpUid }) => {
-  const [checked, setChecked] = useState(false);
-
+export const Checkbox: FC<Props> = ({ label, tmpUid, checked, setChecked }) => {
   const id = "checkbox" + "-" + tmpUid;
-  const active = checked ? "text-[#17A2B8]" : "text-[#6C757D]";
+  const activeLabel = checked ? "text-[#17A2B8]" : "text-[#6C757D]";
+  const activeCheckboxBg = checked ? "bg-[#17A2B8] border-0" : "";
 
-  const handleChange = () => setChecked((prev) => !prev);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(tmpUid, e.target.checked);
+  };
 
   return (
     <>
@@ -22,7 +25,7 @@ export const Checkbox: FC<Props> = ({ label, tmpUid }) => {
           <input
             type="checkbox"
             id={id}
-            className="appearance-none h-[18px] w-[18px] border-2 border-[#CED4DA] rounded-md checked:bg-[#17A2B8] checked:border-0"
+            className={`appearance-none h-[18px] w-[18px] border-2 border-[#CED4DA] rounded-md ${activeCheckboxBg}`}
             onChange={handleChange}
           />
 
@@ -33,7 +36,7 @@ export const Checkbox: FC<Props> = ({ label, tmpUid }) => {
           )}
         </div>
 
-        <label htmlFor={id} className={`relative -top-[1px] font-medium ml-2  ${active}`}>
+        <label htmlFor={id} className={`relative -top-[1px] font-medium ml-2 select-none ${activeLabel}`}>
           {label}
         </label>
       </div>

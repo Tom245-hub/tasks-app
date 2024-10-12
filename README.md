@@ -21,3 +21,4 @@ tmpUid - temporary UID generated in the frontend application. After saving to th
 
 - I used Context to manage state between template components to avoid prop drilling if we expand the project
 - I separated reusable components so that we can use them in another components if we expand the project
+- I used React Fragment in components even if there is only one child, because in my opinion this aproach is more readable
