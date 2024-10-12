@@ -1,10 +1,10 @@
 # Tasks App
 
-Live:
+Live: https://tasks-app-woad.vercel.app/
 
 ## Run the project
 
-- clone repository:
+- git clone https://github.com/Tom245-hub/tasks-app.git
 - npm run install
 - npm run dev
 
