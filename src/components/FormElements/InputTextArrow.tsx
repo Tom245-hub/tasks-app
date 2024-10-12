@@ -34,7 +34,7 @@ export const InputTextArrow: FC<Props> = ({ placeholder, press }) => {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           value={input}
-          className="h-[48px] w-full border border-[#DEE2E6] pl-6 pr-12 rounded-lg placeholder:text-[#54595E] placeholder:font-semibold focus:outline-none focus:border-gray-400"
+          className="h-[48px] w-full pl-6 pr-12 rounded-lg placeholder:text-grayMedium placeholder:font-semibold focus:outline-none focus:border-gray-400 form-element"
         />
 
         <span className="cursor-pointer absolute right-4 top-0 transform translate-y-1/2" onClick={handleClick}>

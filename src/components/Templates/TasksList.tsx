@@ -20,11 +20,11 @@ export const TasksList: FC = () => {
 
   const filteredTasks = filterTasks(tasksList);
 
-  const empty = <h5 className="text-[#54595E] text-center font-semibold text-[16px]">Empty list</h5>;
+  const empty = <h5 className="text-grayMedium text-center font-semibold">Empty list</h5>;
 
   return (
     <>
-      <div className="flex flex-col w-[285px] gap-4 p-4 rounded-lg border border-[#DEE2E6]">
+      <div className="flex flex-col w-[285px] gap-4 p-4 rounded-lg border border-grayLight">
         {filteredTasks.length
           ? filteredTasks.map((task) => (
               <div className="flex justify-between gap-2 ">

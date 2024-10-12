@@ -11,8 +11,8 @@ interface Props {
 
 export const Checkbox: FC<Props> = ({ label, tmpUid, checked, setChecked }) => {
   const id = "checkbox" + "-" + tmpUid;
-  const activeLabel = checked ? "text-[#17A2B8]" : "text-[#6C757D]";
-  const activeCheckboxBg = checked ? "bg-[#17A2B8] border-0" : "";
+  const activeLabel = checked ? "text-primary" : "text-grayDark";
+  const activeCheckbox = checked ? "bg-primary border-primary " : "border-graySuperLight hover:border-gray-400";
 
   const handleChange = () => {
     setChecked(tmpUid, !checked);
@@ -25,7 +25,7 @@ export const Checkbox: FC<Props> = ({ label, tmpUid, checked, setChecked }) => {
           <input
             type="checkbox"
             id={id}
-            className={`appearance-none h-[18px] w-[18px] border-2 border-[#CED4DA] rounded-md ${activeCheckboxBg}`}
+            className={`appearance-none h-[18px] w-[18px] border-2 border-graySuperLight rounded-md ${activeCheckbox} transition duration-300`}
             onChange={handleChange}
           />
 

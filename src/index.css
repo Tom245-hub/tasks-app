@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form-element {
+  @apply bg-white hover:bg-gray-100 border border-grayLight hover:border-gray-400 transition duration-300 rounded-lg;
+}

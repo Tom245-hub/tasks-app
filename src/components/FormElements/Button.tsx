@@ -7,13 +7,11 @@ interface Props {
 }
 
 export const Button: FC<Props> = ({ active, title, onClick }) => {
-  const activeStyles = active
-    ? "bg-[#17A2B8] text-white font-semibold"
-    : "border border-[#DEE2E6] text-[#54595E] font-medium hover:bg-gray-100 hover:border-gray-400 transition-colors duration-300";
+  const activeStyles = active ? "border bg-primary text-white font-semibold rounded-lg" : "form-element text-grayMedium font-medium";
 
   return (
     <>
-      <button className={`h-9 w-full pl-6 pr-4 rounded-lg whitespace-nowrap ${activeStyles}`} onClick={onClick}>
+      <button className={`h-9 w-full pl-6 pr-4 whitespace-nowrap ${activeStyles}`} onClick={onClick}>
         {title}
       </button>
     </>
